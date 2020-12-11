@@ -1,18 +1,22 @@
 let totalCats = 0
 
-setInterval(update(),
+setInterval(update,
     1000)
 
 function update() {
     console.log("Herro dere")
+
 }
 
 function count() {
-    totalCats == totalCats + 1
-
+    // let totalCats = document.getElementById('cat-number')
+    totalCats++
+    console.log(totalCats)
+    document.getElementById('cat-number').innerHTML = `${totalCats}`
 }
 
 function purchase() {
+
 
 }
 
