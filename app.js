@@ -5,6 +5,12 @@ let clickUpgrades = {
         price: 1,
         quantity: 0,
         multiplier: 1
+    },
+
+    lazer: {
+        price: 2,
+        quantity: 0,
+        multiplier: 3
     }
 };
 
@@ -15,6 +21,12 @@ let autoUpgrades = {
         price: 10,
         quantity: 0,
         multiplier: 2
+    },
+
+    fishOnALine: {
+        price: 7,
+        quantity: 0,
+        multiplier: 3
     }
 };
 
