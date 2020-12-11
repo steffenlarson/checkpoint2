@@ -1,10 +1,30 @@
 let totalCats = 0
 
+let clickUpgrades = {
+    treats: {
+        price: 1,
+        quantity: 0,
+        multiplier: 1
+    }
+};
+
+
+
+let autoUpgrades = {
+    crazyCatLady: {
+        price: 10,
+        quantity: 0,
+        multiplier: 2
+    }
+};
+
+
 setInterval(update,
     1000)
 
 function update() {
     console.log("Herro dere")
+    document.getElementById('cat-number').innerHTML = `${totalCats}`
 
 }
 
