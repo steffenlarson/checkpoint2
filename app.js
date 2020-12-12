@@ -50,7 +50,7 @@ function buyUpgrade(userChoice) {
     if (userChoice == "treats"
         && totalCats >= clickUpgrades.treats.price) {
         clickUpgrades.treats.quantity++
-        totalCats - clickUpgrades.treats.price
+        totalCats -= clickUpgrades.treats.price
     } else if (userChoice == "laser") {
         clickUpgrades.laser.quantity++
     } else if (userChoice == "crazyCatLady") {
@@ -65,6 +65,6 @@ function buyUpgrade(userChoice) {
 
 
     // console.log("purchased")
-
+    update()
 }
 
