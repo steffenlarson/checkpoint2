@@ -1,6 +1,7 @@
 let totalCats = 0
 
 let clickUpgrades = {
+
     treats: {
         price: 1,
         quantity: 0,
@@ -14,9 +15,8 @@ let clickUpgrades = {
     }
 };
 
-
-
 let autoUpgrades = {
+
     crazyCatLady: {
         price: 10,
         quantity: 0,
@@ -30,7 +30,6 @@ let autoUpgrades = {
     }
 };
 
-
 setInterval(update,
     1000)
 
@@ -41,22 +40,31 @@ function update() {
 }
 
 function count() {
-    // let totalCats = document.getElementById('cat-number')
+
     totalCats++
     console.log(totalCats)
     document.getElementById('cat-number').innerHTML = `${totalCats}`
 }
 
-function purchase() {
+function buyUpgrade(userChoice) {
+    if (userChoice == "treats"
+        && totalCats >= clickUpgrades.treats.price) {
+        clickUpgrades.treats.quantity++
+        totalCats - clickUpgrades.treats.price
+    } else if (userChoice == "laser") {
+        clickUpgrades.laser.quantity++
+    } else if (userChoice == "crazyCatLady") {
+
+    }
 
 
-}
 
-function changePrice() {
+    // if (totalCats >= clickUpgrades.userChoice.price) {
+    //     clickUpgrades.treats.quantity++
+    // }
 
-}
 
-function drawInventory() {
+    // console.log("purchased")
 
 }
 
