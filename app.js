@@ -36,6 +36,7 @@ setInterval(update,
 
 function startInterval() {
     collectionInterval = setInterval(collectAutoUpgrades, 1000);
+    console.log('hi')
 }
 
 
@@ -50,12 +51,10 @@ function update() {
     let ladyPrice = autoUpgrades.crazyCatLady.price;
     let laserPrice = clickUpgrades.laser.price
 
-
     document.getElementById('treat-price').innerHTML = `${treatPrice}`
     document.getElementById('fish-price').innerHTML = `${fishPrice}`
     document.getElementById('lady-price').innerHTML = `${ladyPrice}`
     document.getElementById('laser-price').innerHTML = `${laserPrice}`
-
 
 
     let treatquantity = clickUpgrades.treats.quantity;
@@ -63,11 +62,22 @@ function update() {
     let ladyquantity = autoUpgrades.crazyCatLady.quantity;
     let laserquantity = clickUpgrades.laser.quantity
 
-
     document.getElementById('treat-quantity').innerHTML = ` X ${treatquantity}`
     document.getElementById('fish-quantity').innerHTML = ` X ${fishquantity}`
     document.getElementById('lady-quantity').innerHTML = ` X ${ladyquantity}`
     document.getElementById('laser-quantity').innerHTML = ` X ${laserquantity}`
+
+    // TODO change these to show what the upgrade does.
+    let treatquantity = clickUpgrades.treats.quantity;
+    let fishquantity = autoUpgrades.fishOnALine.quantity;
+    let ladyquantity = autoUpgrades.crazyCatLady.quantity;
+    let laserquantity = clickUpgrades.laser.quantity
+
+    document.getElementById('treat-adder').innerHTML = ` + ${treatquantity}`
+    document.getElementById('fish-adder').innerHTML = ` + ${fishquantity}`
+    document.getElementById('lady-adder').innerHTML = ` + ${ladyquantity}`
+    document.getElementById('laser-adder').innerHTML = ` + ${laserquantity}`
+
 }
 
 function count() {
@@ -111,16 +121,7 @@ function buyUpgrade(userChoice) {
 
 
 
-    function collectAutoUpgrades() {
-        let catLadyQuantity = autoUpgrades.crazyCatLady.quantity
-        let fishLineQuantity = autoUpgrades.fishOnALine.quantity
-        let catLadyMultiplier = autoUpgrades.crazyCatLady.multiplier
-        let fishLineMultiplier = autoUpgrades.fishOnALine.multiplier
 
-        catLadyQuantity * catLadyMultiplier + totalCats
-        fishLineQuantity * fishLineMultiplier + totalCats
-
-    }
 
     // if (totalCats >= clickUpgrades.userChoice.price) {
     //     clickUpgrades.treats.quantity++
@@ -129,6 +130,25 @@ function buyUpgrade(userChoice) {
 
     // console.log("purchased")
     update()
-    setInterval()
+
 }
 
+function collectAutoUpgrades() {
+    let catLadyQuantity = autoUpgrades.crazyCatLady.quantity
+    let fishLineQuantity = autoUpgrades.fishOnALine.quantity
+    let catLadyMultiplier = autoUpgrades.crazyCatLady.multiplier
+    let fishLineMultiplier = autoUpgrades.fishOnALine.multiplier
+
+    for (const key in autoUpgrades) {
+        if (Object.hasOwnProperty.call(autoUpgrades, key)) {
+            const element = autoUpgrades[key];
+            console.log(element)
+        }
+
+    }
+    catLadyQuantity * catLadyMultiplier + totalCats
+    fishLineQuantity * fishLineMultiplier + totalCats
+
+}
+
+startInterval()
