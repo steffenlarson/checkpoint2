@@ -68,15 +68,15 @@ function update() {
     document.getElementById('laser-quantity').innerHTML = ` X ${laserquantity}`
 
     // TODO change these to show what the upgrade does.
-    let treatquantity = clickUpgrades.treats.quantity;
-    let fishquantity = autoUpgrades.fishOnALine.quantity;
-    let ladyquantity = autoUpgrades.crazyCatLady.quantity;
-    let laserquantity = clickUpgrades.laser.quantity
+    let treatmultiplier = clickUpgrades.treats.multiplier;
+    let fishmultiplier = autoUpgrades.fishOnALine.multiplier;
+    let ladymultiplier = autoUpgrades.crazyCatLady.multiplier;
+    let lasermultiplier = clickUpgrades.laser.multiplier
 
-    document.getElementById('treat-adder').innerHTML = ` + ${treatquantity}`
-    document.getElementById('fish-adder').innerHTML = ` + ${fishquantity}`
-    document.getElementById('lady-adder').innerHTML = ` + ${ladyquantity}`
-    document.getElementById('laser-adder').innerHTML = ` + ${laserquantity}`
+    document.getElementById('treat-adder').innerHTML = ` + ${treatmultiplier} per click`
+    document.getElementById('fish-adder').innerHTML = ` + ${fishmultiplier} per second`
+    document.getElementById('lady-adder').innerHTML = ` + ${ladymultiplier} per second`
+    document.getElementById('laser-adder').innerHTML = ` + ${lasermultiplier} per click`
 
 }
 
@@ -134,20 +134,20 @@ function buyUpgrade(userChoice) {
 }
 
 function collectAutoUpgrades() {
-    let catLadyQuantity = autoUpgrades.crazyCatLady.quantity
-    let fishLineQuantity = autoUpgrades.fishOnALine.quantity
-    let catLadyMultiplier = autoUpgrades.crazyCatLady.multiplier
-    let fishLineMultiplier = autoUpgrades.fishOnALine.multiplier
+    // let catLadyQuantity = autoUpgrades.crazyCatLady.quantity
+    // let fishLineQuantity = autoUpgrades.fishOnALine.quantity
+    // let catLadyMultiplier = autoUpgrades.crazyCatLady.multiplier
+    // let fishLineMultiplier = autoUpgrades.fishOnALine.multiplier
 
     for (const key in autoUpgrades) {
         if (Object.hasOwnProperty.call(autoUpgrades, key)) {
             const element = autoUpgrades[key];
             console.log(element)
+            totalCats = element.quantity * element.multiplier + totalCats
         }
-
     }
-    catLadyQuantity * catLadyMultiplier + totalCats
-    fishLineQuantity * fishLineMultiplier + totalCats
+    // catLadyQuantity * catLadyMultiplier + totalCats
+    // fishLineQuantity * fishLineMultiplier + totalCats
 
 }
 
