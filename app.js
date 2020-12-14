@@ -8,7 +8,7 @@ let clickUpgrades = {
         multiplier: 1
     },
 
-    lazer: {
+    laser: {
         price: 2,
         quantity: 0,
         multiplier: 3
@@ -37,6 +37,11 @@ function update() {
     console.log("Herro dere")
     document.getElementById('cat-number').innerHTML = `${totalCats}`
 
+
+    document.getElementById('treat-price').innerHTML = `${VARIABLE}`
+    document.getElementById('fish-price').innerHTML = `${VARIABLE}`
+    document.getElementById('lady-price').innerHTML = `${VARIABLE}`
+    document.getElementById('laser-price').innerHTML = `${VARIABLE}`
 }
 
 function count() {
@@ -51,9 +56,12 @@ function buyUpgrade(userChoice) {
         && totalCats >= clickUpgrades.treats.price) {
         clickUpgrades.treats.quantity++
         totalCats -= clickUpgrades.treats.price
+        clickUpgrades.treats.price * .2
     } else if (userChoice == "laser") {
         clickUpgrades.laser.quantity++
     } else if (userChoice == "crazyCatLady") {
+
+    } else if (userChoice == "fishOnALine") {
 
     }
 
