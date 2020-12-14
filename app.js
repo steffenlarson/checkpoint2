@@ -66,6 +66,13 @@ function update() {
 function count() {
 
     totalCats++
+
+    let treatsQ = clickUpgrades.treats.quantity
+    totalCats = totalCats + treatsQ
+
+    let laserQ = clickUpgrades.laser.quantity
+    totalCats = totalCats + laserQ * 10
+
     console.log(totalCats)
     document.getElementById('cat-number').innerHTML = `${totalCats}`
 }
