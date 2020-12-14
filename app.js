@@ -57,12 +57,21 @@ function buyUpgrade(userChoice) {
         clickUpgrades.treats.quantity++
         totalCats -= clickUpgrades.treats.price
         clickUpgrades.treats.price * .2
-    } else if (userChoice == "laser") {
+    } else if (userChoice == "laser"
+        && totalCats >= clickUpgrades.laser.price) {
         clickUpgrades.laser.quantity++
-    } else if (userChoice == "crazyCatLady") {
-
-    } else if (userChoice == "fishOnALine") {
-
+        totalCats -= clickUpgrades.laser.price
+        clickUpgrades.laser.price * .2
+    } else if (userChoice == "crazyCatLady"
+        && totalCats >= autoUpgrades.crazyCatLady.price) {
+        autoUpgrades.crazyCatLady.quantity++
+        totalCats -= autoUpgrades.crazyCatLady.price
+        autoUpgrades.crazyCatLady.price * .2
+    } else if (userChoice == "fishOnALine"
+        && totalCats >= autoUpgrades.fishOnALine.price) {
+        autoUpgrades.fishOnALine.quantity++
+        totalCats -= autoUpgrades.fishOnALine.price
+        autoUpgrades.fishOnALine.price * .2
     }
 
 
