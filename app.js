@@ -5,7 +5,7 @@ let clickUpgrades = {
     treats: {
         price: 1,
         quantity: 0,
-        multiplier: 1
+        multiplier: 2
     },
 
     laser: {
@@ -39,7 +39,7 @@ function update() {
 
     // Need help here. Trying to input the value of the price onto the buttons. That variable is changing.
     // connot read property price of undefined
-    let treatPrice = clickUpgrades.treat.price;
+    let treatPrice = clickUpgrades.treats.price;
     let fishPrice = autoUpgrades.fishOnALine.price;
     let ladyPrice = autoUpgrades.crazyCatLady.price;
     let laserPrice = clickUpgrades.laser.price
@@ -52,16 +52,16 @@ function update() {
 
 
 
-    let treatQuantity = clickUpgrades.treat.quantity;
-    let fishQuantity = autoUpgrades.fishOnALine.quantity;
-    let ladyQuantity = autoUpgrades.crazyCatLady.quantity;
-    let laserQuantity = clickUpgrades.laser.quantity
+    let treatquantity = clickUpgrades.treats.quantity;
+    let fishquantity = autoUpgrades.fishOnALine.quantity;
+    let ladyquantity = autoUpgrades.crazyCatLady.quantity;
+    let laserquantity = clickUpgrades.laser.quantity
 
 
-    document.getElementById('treat-Quantity').innerHTML = ` X ${treatQuantity}`
-    document.getElementById('fish-Quantity').innerHTML = ` X ${fishQuantity}`
-    document.getElementById('lady-Quantity').innerHTML = ` X ${ladyQuantity}`
-    document.getElementById('laser-Quantity').innerHTML = ` X ${laserQuantity}`
+    document.getElementById('treat-quantity').innerHTML = ` X ${treatquantity}`
+    document.getElementById('fish-quantity').innerHTML = ` X ${fishquantity}`
+    document.getElementById('lady-quantity').innerHTML = ` X ${ladyquantity}`
+    document.getElementById('laser-quantity').innerHTML = ` X ${laserquantity}`
 }
 
 function count() {
