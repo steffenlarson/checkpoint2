@@ -37,8 +37,7 @@ function update() {
     // console.log("Herro dere")
     document.getElementById('cat-number').innerHTML = `${totalCats}`
 
-    // Need help here. Trying to input the value of the price onto the buttons. That variable is changing.
-    // connot read property price of undefined
+
     let treatPrice = clickUpgrades.treats.price;
     let fishPrice = autoUpgrades.fishOnALine.price;
     let ladyPrice = autoUpgrades.crazyCatLady.price;
