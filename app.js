@@ -33,6 +33,13 @@ let autoUpgrades = {
 setInterval(update,
     1000)
 
+
+function startInterval() {
+    collectionInterval = setInterval(collectAutoUpgrades, 1000);
+}
+
+
+
 function update() {
     // console.log("Herro dere")
     document.getElementById('cat-number').innerHTML = `${totalCats}`
@@ -69,9 +76,11 @@ function count() {
 
     let treatsQ = clickUpgrades.treats.quantity
     totalCats = totalCats + treatsQ
-
     let laserQ = clickUpgrades.laser.quantity
     totalCats = totalCats + laserQ * 10
+
+
+
 
     console.log(totalCats)
     document.getElementById('cat-number').innerHTML = `${totalCats}`
@@ -102,6 +111,17 @@ function buyUpgrade(userChoice) {
 
 
 
+    function collectAutoUpgrades() {
+        let catLadyQuantity = autoUpgrades.crazyCatLady.quantity
+        let fishLineQuantity = autoUpgrades.fishOnALine.quantity
+        let catLadyMultiplier = autoUpgrades.crazyCatLady.multiplier
+        let fishLineMultiplier = autoUpgrades.fishOnALine.multiplier
+
+        catLadyQuantity * catLadyMultiplier + totalCats
+        fishLineQuantity * fishLineMultiplier + totalCats
+
+    }
+
     // if (totalCats >= clickUpgrades.userChoice.price) {
     //     clickUpgrades.treats.quantity++
     // }
@@ -109,5 +129,6 @@ function buyUpgrade(userChoice) {
 
     // console.log("purchased")
     update()
+    setInterval()
 }
 
